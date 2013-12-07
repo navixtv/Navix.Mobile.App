@@ -11,7 +11,7 @@ angular.module('Navix')
 	})
 	.controller("AccountLoginController", function($scope) {
 		var url = "http://dts.podtrac.com/redirect.mp4/twit.cachefly.net/video/aaa/aaa0133/aaa0133_h264m_864x480_500.mp4";
-		window.plugins.videoPlayer.play(url);
+		var media = new Media(url);
 		/*
 		var playerConfig = {
 			startTime: 0
