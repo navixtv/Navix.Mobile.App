@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+
     },
     // Bind Event Listeners
     //
@@ -37,6 +38,19 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+		var pushNotification = window.plugins.pushNotification;
+		successHandler: function(result) {
+			alert('Callback Success! Result = '+result)
+		},
+		pushNotification.register(function(result) {
+			alert('Callback Success! Result = '+result)
+		}, function(error) {
+			alert(error);
+		}, {
+			senderID:"824841663931",
+			ecb:"app.onNotificationGCM"
+		});
+
 //        var parentElement = document.getElementById(id);
 //        var listeningElement = parentElement.querySelector('.listening');
 //        var receivedElement = parentElement.querySelector('.received');
@@ -46,4 +60,5 @@ var app = {
 
 //        console.log('Received Event: ' + id);
     }
+
 };
