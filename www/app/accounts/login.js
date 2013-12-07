@@ -10,6 +10,9 @@ angular.module('Navix')
 		;
 	})
 	.controller("AccountLoginController", function($scope) {
+		var url = "http://dts.podtrac.com/redirect.mp4/twit.cachefly.net/video/aaa/aaa0133/aaa0133_h264m_864x480_500.mp4";
+		window.plugins.videoPlayer.play(url);
+		/*
 		var playerConfig = {
 			startTime: 0
 		};
@@ -57,6 +60,8 @@ angular.module('Navix')
 			controls.append("<button onclick='player.addSeconds(30)'>30</button>");
 			controls.append("<button onclick='player.addSeconds(60)'>60</button>");
 			$('.vjs-control-bar').append(controls);
+
 		});
+		 /**/
 	})
 ;
